@@ -49,9 +49,11 @@ def convert_waveform(
         effects.append(["rate", f"{to_sample_rate}"])
     if to_mono and waveform.shape[0] > 1:
         effects.append(["channels", "1"])
+    print(waveform)
     if len(effects) > 0:
         is_np_input = isinstance(waveform, np.ndarray)
         _waveform = torch.from_numpy(waveform) if is_np_input else waveform
+        print(waveform)
         converted, converted_sample_rate = ta_sox.apply_effects_tensor(
             _waveform, sample_rate, effects
         )

@@ -57,10 +57,10 @@ class Cantonese_ASR(Dataset):
     def __init__(self, root: str,split: str) -> None:
         assert split in self.SPLITS 
         _root = Path(root) 
-        # wav_root, txt_root = _root / "audio", _root / "transcription"
+        wav_root = _root / "waves"
         # text_files=glob.glob('**/*.txt')
         # wav_files=glob.glob('**/*.wav')
-        assert _root.is_dir() and wav_root.is_dir() and txt_root.is_dir()
+        assert _root.is_dir() 
         # Load audio segments
         try:
             import yaml
@@ -68,8 +68,8 @@ class Cantonese_ASR(Dataset):
             print("Please install PyYAML to load YAML files")
         # with open(txt_root / f"{split}.yaml") as f:
         
-        csv_file= _root/ f"test.csv"
-        segments = pd.read_csv(csv_file)
+        tsv_file= _root/ f"test_bigger.tsv"
+        segments = pd.read_csv(tsv_file, sep='\t')
         
         # dev_csv=pd.read_csv(_root/ f"dev.csv")
         # test_csv=pd.read_csv(_root/ f"test.csv")
@@ -95,19 +95,18 @@ class Cantonese_ASR(Dataset):
             
         # Gather info
         self.data = []
-        for wav_filename, duration, _id, tgt_utt in zip(segments["audio_path"],segments["duration"],segments["id"],segments["text_path"]):
+        for wav_filename, _id, tgt_utt in zip(segments["path"],segments["client_id"],segments["sentence"]):
             wav_path = wav_root / wav_filename
             sample_rate = sf.info(wav_path.as_posix()).samplerate
             # seg_group = sorted(_seg_group, key=lambda x: x["offset"])
             # for i, segment in enumerate(seg_group):
             #     offset = int(float(segment["offset"]) * sample_rate)
-            n_frames = int(float(duration) * sample_rate)
+            n_frames = -1
             # _id = segments["id"]
             # tgt_utt=segments["text_path"]
             self.data.append(
                     (
                         wav_path.as_posix(),
-                        n_frames,
                         sample_rate,
                         tgt_utt,
                         _id,
@@ -117,9 +116,9 @@ class Cantonese_ASR(Dataset):
     def __getitem__(
             self, n: int
     ) -> Tuple[torch.Tensor, int, str, str]:
-        wav_path, n_frames, sr, \
+        wav_path, sr, \
         tgt_utt, utt_id = self.data[n]
-        waveform, _ = get_waveform(wav_path, frames=n_frames, start=0)
+        waveform, _ = get_waveform(wav_path, frames=-1, start=0)
         waveform = torch.from_numpy(waveform)
         return waveform, sr, tgt_utt, utt_id
 

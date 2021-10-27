@@ -31,7 +31,7 @@ PAD_TOKEN, PAD_TOKEN_ID = "<pad>", 1
 
 def gen_vocab(
     input_path: Path, output_path_prefix: Path, model_type="bpe",
-    vocab_size=1000, special_symbols: Optional[List[str]] = None
+    vocab_size=1000, character_coverage=1.0, special_symbols: Optional[List[str]] = None
 ):
     # Train SentencePiece Model
     arguments = [
@@ -39,7 +39,7 @@ def gen_vocab(
         f"--model_prefix={output_path_prefix.as_posix()}",
         f"--model_type={model_type}",
         f"--vocab_size={vocab_size}",
-        "--character_coverage=1.0",
+        f"--character_coverage={character_coverage}",
         f"--num_threads={cpu_count()}",
         f"--unk_id={UNK_TOKEN_ID}",
         f"--bos_id={BOS_TOKEN_ID}",
@@ -79,8 +79,9 @@ def extract_fbank_features(
 ):
     if output_path is not None and output_path.is_file() and not overwrite:
         return
-
-    _waveform = convert_waveform(waveform, sample_rate, to_mono=True)
+  
+    # _waveform = convert_waveform(waveform, sample_rate, to_mono=True)
+    _waveform = waveform
     # Kaldi compliance: 16-bit signed integers
     _waveform = _waveform * (2 ** 15)
     _waveform = _waveform.numpy()
@@ -116,6 +117,7 @@ def get_zip_manifest(
         utt_id = Path(i.filename).stem
         offset, file_size = i.header_offset + 30 + len(i.filename), i.file_size
         paths[utt_id] = f"{zip_path.as_posix()}:{offset}:{file_size}"
+        # paths[utt_id] = f"{zip_path.as_posix()}:{utt_id}.npy"
         with open(_zip_path, "rb") as f:
             f.seek(offset)
             byte_data = f.read(file_size)
