@@ -50,7 +50,7 @@ class Cantonese_ASR(Dataset):
     waveform, sample_rate, target utterance,
     utterance_id
     """
-    SPLITS = ["test"]
+    SPLITS = ["train"]
     # SPLITS = ["train", "dev", "test"]
 
 
@@ -68,7 +68,7 @@ class Cantonese_ASR(Dataset):
             print("Please install PyYAML to load YAML files")
         # with open(txt_root / f"{split}.yaml") as f:
         
-        tsv_file= _root/ f"test_bigger.tsv"
+        tsv_file= _root/ f"train_bigger.tsv"
         segments = pd.read_csv(tsv_file, sep='\t')
         
         # dev_csv=pd.read_csv(_root/ f"dev.csv")
@@ -153,6 +153,7 @@ def process(args):
                     _wavform.numpy(), tgt_sample_rate
                 )
         else:
+
             print("Extracting log mel filter bank features...")
             gcmvn_feature_list = []
             if split == 'train' and args.cmvn_type == "global":
@@ -174,7 +175,7 @@ def process(args):
                     np.savez(f, mean=stats["mean"], std=stats["std"])
 
     # Pack features into ZIP
-    zip_path = cur_root / f"{audio_root.name}_test.zip"
+    zip_path = cur_root / f"{audio_root.name}_train.zip"
     print("ZIPing audios/features...")
     create_zip(audio_root, zip_path)
     print("Fetching ZIP manifest...")

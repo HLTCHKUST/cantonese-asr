@@ -21,6 +21,6 @@ cd ${CODE_DIR}
 # PYTHONPATH=/home/rita/cantonese-asr/fairseq python -m fairseq_cli.train
 
 
-# #data preprocessing
+#data preprocessing
 python /home/rita/cantonese-asr/fairseq/examples/speech_to_text/prep_covost_canto_asr_data.py \
-    --data-root ${DATA_ROOT}   --vocab-type unigram --vocab-size 8000 --character-coverage 0.9995
+    --data-root ${DATA_ROOT}   --vocab-type char --vocab-size 4000 --character-coverage 0.9995
