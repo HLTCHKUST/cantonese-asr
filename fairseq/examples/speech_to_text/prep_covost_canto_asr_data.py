@@ -139,7 +139,7 @@ def process(args):
         print(f"{cur_root.as_posix()} does not exist. Skipped.")
     # Extract features
     audio_root = cur_root / ("flac" if args.use_audio_input else "fbank80")
-    print(audio_root)
+    # print(audio_root)
     audio_root.mkdir(exist_ok=True)
 
     for split in Cantonese_ASR.SPLITS:

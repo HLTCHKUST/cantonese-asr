@@ -57,11 +57,10 @@ class Cantonese_ASR(Dataset):
     def __init__(self, root: str,split: str) -> None:
         assert split in self.SPLITS 
         _root = Path(root) 
-        wav_root = _root / "audio"
         # wav_root, txt_root = _root / "audio", _root / "transcription"
         # text_files=glob.glob('**/*.txt')
         # wav_files=glob.glob('**/*.wav')
-        assert _root.is_dir() and wav_root.is_dir()
+        assert _root.is_dir() and wav_root.is_dir() and txt_root.is_dir()
         # Load audio segments
         try:
             import yaml
@@ -103,7 +102,6 @@ class Cantonese_ASR(Dataset):
             # for i, segment in enumerate(seg_group):
             #     offset = int(float(segment["offset"]) * sample_rate)
             n_frames = int(float(duration) * sample_rate)
-           
             # _id = segments["id"]
             # tgt_utt=segments["text_path"]
             self.data.append(
@@ -122,7 +120,6 @@ class Cantonese_ASR(Dataset):
         wav_path, n_frames, sr, \
         tgt_utt, utt_id = self.data[n]
         waveform, _ = get_waveform(wav_path, frames=n_frames, start=0)
-
         waveform = torch.from_numpy(waveform)
         return waveform, sr, tgt_utt, utt_id
 

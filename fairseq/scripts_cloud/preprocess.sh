@@ -14,6 +14,11 @@ cd ${CODE_DIR}
 # for i in ${DATA_ROOT}/waves/*.wav
 # do
 #     sox  --guard "$i" -e floating-point -b 32 "${DATA_ROOT}/audio/$(basename -s .wav "$i").wav" rate -v 16k dither -s
+# for i in ${DATA_ROOT}/clips/*.mp3
+#or
+ 
+# do
+#     sox "$i" "${DATA_ROOT}/waves/$(basename -s .mp3 "$i").wav"
 # done
 
 # cd fairseq
