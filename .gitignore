@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-# JetBrains PyCharm IDE
-.idea/
-
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,17 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
-<<<<<<< HEAD
 # Distribution / packaging
 .Python
-=======
-# macOS dir files
-.DS_Store
-
-# Distribution / packaging
-.Python
-env/
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 build/
 develop-eggs/
 dist/
@@ -35,21 +20,12 @@ parts/
 sdist/
 var/
 wheels/
-<<<<<<< HEAD
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
-=======
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Checkpoints
-checkpoints
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -64,23 +40,16 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
-<<<<<<< HEAD
 .nox/
-=======
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
-<<<<<<< HEAD
 *.py,cover
 .hypothesis/
 .pytest_cache/
-=======
-.hypothesis/
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 
 # Translations
 *.mo
@@ -89,11 +58,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-<<<<<<< HEAD
 db.sqlite3
 db.sqlite3-journal
-=======
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 
 # Flask stuff:
 instance/
@@ -111,7 +77,6 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-<<<<<<< HEAD
 # IPython
 profile_default/
 ipython_config.py
@@ -132,18 +97,10 @@ __pypackages__/
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
-=======
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 
 # SageMath parsed files
 *.sage.py
 
-<<<<<<< HEAD
 # Environments
 .env
 .venv
@@ -152,15 +109,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-=======
-# dotenv
-.env
-
-# virtualenv
-.venv
-venv/
-ENV/
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
 
 # Spyder project settings
 .spyderproject
@@ -174,37 +122,8 @@ ENV/
 
 # mypy
 .mypy_cache/
-<<<<<<< HEAD
 .dmypy.json
 dmypy.json
 
 # Pyre type checker
 .pyre/
-=======
-
-# Generated files
-/fairseq/temporal_convolution_tbc
-/fairseq/modules/*_layer/*_forward.cu
-/fairseq/modules/*_layer/*_backward.cu
-/fairseq/version.py
-
-# data
-data-bin/
-
-# reranking
-/examples/reranking/rerank_data
-
-# Cython-generated C++ source files
-/fairseq/data/data_utils_fast.cpp
-/fairseq/data/token_block_utils_fast.cpp
-
-# VSCODE
-.vscode/ftp-sync.json
-.vscode/settings.json
-
-# Experimental Folder
-experimental/*
-
-# Weights and Biases logs
-wandb/
->>>>>>> fcca32258c8e8bcc9f9890bf4714fa2f96b6b3e1
