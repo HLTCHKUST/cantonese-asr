@@ -22,7 +22,7 @@ Tiezheng Yu and Rita Frieske and Peng Xu and Samuel Cahyawijaya and Cheuk Tung S
 3. We will reply a email with the link to download the dataset.
 
 ## Download checkpoints
-![Google Drive Link](https://drive.google.com/drive/folders/1BpGGOfr4IDYv0cWTowsDKkVmud7tNYzy?usp=sharing)
+[Google Drive Link](https://drive.google.com/drive/folders/1BpGGOfr4IDYv0cWTowsDKkVmud7tNYzy?usp=sharing)
 
 ## How to run the code?
 [TODO]
