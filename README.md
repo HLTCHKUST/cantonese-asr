@@ -17,9 +17,8 @@ Tiezheng Yu and Rita Frieske and Peng Xu and Samuel Cahyawijaya and Cheuk Tung S
 ```
 
 ### Download
-1. Send an email with title "Download MDCC Dataset" to chinatysonyu@gmail.com. We will reply an email attached with a LICENSE that you need to sign.
-2. Send an email with title "Download MDCC Dataset SIGNED" and attach the PDF of signed LICENSE to chinatysonyu@gmail.com.
-3. We will reply a email with the link to download the dataset.
+1. You can find the LICENSE named "MDCC_LICENSE" in is folder. Please sign the license and send it to chinatysonyu@gmail.com.
+2. Then you can download the data from this [Google Drive Link](https://drive.google.com/drive/folders/1HhNqrPpUTtjsJ0wZQCSKqet7ftmWb6eI?usp=sharing).
 
 ## Download checkpoints
 [Google Drive Link](https://drive.google.com/drive/folders/1BpGGOfr4IDYv0cWTowsDKkVmud7tNYzy?usp=sharing)
