@@ -1,5 +1,3 @@
-We will update the dataset and model checkpoints soon!
-
 ## MDCC Dataset
 This repository contains code and meta-data to download the How2 dataset as described in the following paper:
 
