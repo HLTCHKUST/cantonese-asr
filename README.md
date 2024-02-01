@@ -1,4 +1,4 @@
-[Update][1 Feb, 2024] We release the .wav data of the dataset [Google Drive Link](https://drive.google.com/file/d/1epfYMMhXdBKA6nxPgUugb2Uj4DllSxkn/view?usp=drive_link). Please use for research perpose only.
+[Update][1 Feb, 2024] We release the .wav data of the dataset [Google Drive Link](https://drive.google.com/file/d/1epfYMMhXdBKA6nxPgUugb2Uj4DllSxkn/view?usp=drive_link). Please use it for research purposes only.
 
 ## MDCC Dataset
 This repository contains code and meta-data to download the How2 dataset as described in the following paper:
